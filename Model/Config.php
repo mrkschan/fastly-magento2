@@ -164,7 +164,7 @@ class Config extends \Magento\PageCache\Model\Config
      */
     public function getServiceId()
     {
-        return $this->_scopeConfig->getValue(self::XML_FASTLY_SERVICE_ID);
+        return $this->_scopeConfig->getValue(self::XML_FASTLY_SERVICE_ID) ?: $_ENV['FASTLY_SERVICE_ID'];
     }
 
     /**
@@ -174,7 +174,7 @@ class Config extends \Magento\PageCache\Model\Config
      */
     public function getApiKey()
     {
-        return $this->_scopeConfig->getValue(self::XML_FASTLY_API_KEY);
+        return $this->_scopeConfig->getValue(self::XML_FASTLY_API_KEY) ?: $_ENV['FASTLY_API_KEY'];
     }
 
     /**
